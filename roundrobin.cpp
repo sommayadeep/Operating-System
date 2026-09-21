@@ -7,12 +7,14 @@ int main() {
     cout << "Enter number of processes: ";
     cin >> n;
 
-    int bt[n], rem[n], wt[n] = {0}, tat[n];
+    int bt[100], rem[100], wt[100], tat[100];
 
-    cout << "Enter burst time of each process:\n";
     for (int i = 0; i < n; i++) {
-        cout << "P" << i + 1 << ": ";
+        wt[i] = 0;
+
+        cout << "Enter burst time of P" << i + 1 << ": ";
         cin >> bt[i];
+
         rem[i] = bt[i];
     }
 
@@ -44,7 +46,6 @@ int main() {
 
     } while (!done);
 
-    // Turnaround Time
     for (int i = 0; i < n; i++) {
         tat[i] = bt[i] + wt[i];
     }
